@@ -3,6 +3,7 @@ const ProductController = require('../controllers/ProductController');
 const UserController = require("../controllers/UserController");
 const WishListController = require('../controllers/WishListController');
 const AuthVerification = require('../middlewares/AuthVerification');
+const CartListController = require('../controllers/CartListController');
 
 const router = express.Router();
 
@@ -39,6 +40,10 @@ router.post('/RemoveWishList',AuthVerification,WishListController.RemoveWishList
 router.get('/WishList',AuthVerification,WishListController.WishList);
 
 
+// Cart
+router.post('/SaveCartList', AuthVerification,CartListController.SaveCartList);
+router.post('/RemoveWishList',AuthVerification,WishListController.RemoveWishList);
+router.get('/WishList',AuthVerification,WishListController.WishList);
 
 
 
