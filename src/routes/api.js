@@ -42,8 +42,9 @@ router.get('/WishList',AuthVerification,WishListController.WishList);
 
 // Cart
 router.post('/SaveCartList', AuthVerification,CartListController.SaveCartList);
-router.post('/RemoveWishList',AuthVerification,WishListController.RemoveWishList);
-router.get('/WishList',AuthVerification,WishListController.WishList);
+router.post('/UpdateCartList/:cartID',AuthVerification,CartListController.UpdateCartList);
+router.post('/RemoveCartList',AuthVerification,CartListController.RemoveCartList);
+router.get('/CartList',AuthVerification,CartListController.CartList);
 
 
 
