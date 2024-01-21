@@ -226,6 +226,26 @@ const ReviewListService = async(req)=>{
 }
 
 
+const CreateReviewService = async (req) => {
+    try{
+        let user_id=req.headers.user_id;
+        let reqBody=req.body;
+        let data=await ReviewModel.create({
+             productID:reqBody['productID'],
+             userID:user_id,
+             des:reqBody['des'],
+             rating:reqBody['rating'],
+         })
+        return {status:"success",data:data}
+    }
+    catch (error) {
+        return {status:"fail",data:error}.toString()
+    }
+
+}
+
+
+
 
 module.exports = {
     BrandListService,
@@ -237,5 +257,6 @@ module.exports = {
     ListBySmilierService,
     ListByKeywordService,
     DetailsService,
-    ReviewListService
+    ReviewListService,
+    CreateReviewService
 }

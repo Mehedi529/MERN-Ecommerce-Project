@@ -59,5 +59,13 @@ router.post('/PaymentFail/:trxID', InvoiceController.PaymentFail);
 router.post('/PaymentIPN/:trxID', InvoiceController.PaymentIPN);
 
 
+// Features
+router.get('/FeaturesList', FeaturesController.FeaturesList);
+
+
+// Create Review
+router.post('/CreateReview', AuthVerification,ProductController.CreateReview);
+
+
 
 module.exports = router;
